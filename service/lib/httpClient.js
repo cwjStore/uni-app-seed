@@ -1,6 +1,7 @@
 import qs from 'qs'
 import enumAuth from './auth'
 import getToken from '@/utils/token.js'
+import {auth_url} from './baseUrl.js'
 class httpClient{
 	constructor() {
 	    this.headers = {};//预留字段
@@ -38,6 +39,12 @@ class httpClient{
 			data= qs.stringify(data,{arrayFormat:'repeat'});
 			url=`${url}?${data}`
 		}
+		/* 登录接口使用formData数据格式 */
+		if(url===`${auth_url}/oauth/token`){
+			Object.assign(headers,{
+				'content-type': 'application/x-www-form-urlencoded'
+			})
+		}
 		uni.showLoading({
 			title:'加载中',
 			mask:true
@@ -60,8 +67,10 @@ class httpClient{
 					uni.hideLoading()
 					uni.showToast({
 						icon:'none',
-						title:'网络出现异常'
+						title:'网络出现异常',
+						duration:3000
 					})
+					resolve(err)
 				}
 			})
 		})
