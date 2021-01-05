@@ -1,7 +1,8 @@
 <template>
 	<view class="container">
 		首页
-		<button @click="click" class="button">详情页面</button>
+		<u-button @click="click" type="primary">详情页面</u-button>
+		<view class="iconfont icon-smile"></view>
 		<!-- #ifdef MP -->
 		<!-- 封装的echart只适合小程序，H5与APP需另行开发 -->
 		<uni-echart class="uni-ec-canvas" canvasId="line-1" type="line" :source="line_source"></uni-echart>

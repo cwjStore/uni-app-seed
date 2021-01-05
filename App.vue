@@ -14,6 +14,7 @@
 
 <style lang="scss">
 	@import "uview-ui/index.scss";
+	@import url("./assets/icon/iconfont.css");
 
 	/*每个页面公共css */
 	/* 全局字体样式 */
