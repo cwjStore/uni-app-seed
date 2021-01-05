@@ -1,10 +1,11 @@
 ## 目录结构
 |-assets
-  |-icon
+  |-icon (字体图标)
   |-scss
     |-variable.scss (全局css变量)
 |-components 
-  |-fj (项目组件)
+  |-base (项目组件)
+  |-uni-ui (其他文件为uni-ui扩展组件)
 |-node_modules
 |-pages (页面)
   |-index
@@ -39,12 +40,17 @@
   |-message.js (消息接口)
   |-user.js (我的接口)
 |-static
-  |-images
+  |-images (项目图片)
   |-mp-weixin (运行在微信小程序环境才会导出的静态资源文件)
 |-store
   |-index.js (状态管理仓库)
-|-utils (js工具包)
+|-utils (自定义js工具包)
+  |-cache.js (缓存token)
+  |-date.js (获取当前日期)
+  |-filter.js (自定义全局过滤)
+  |-rules.js (自定义校验规则)
   |-token.js (获取token)
+|-uview-ui (uview组件)
 |-wxcomponents (运行在微信小程序环境才会编译的组件)
   |-ec-canvas (echart适用于微信小程序组件)
   |-echart
@@ -54,20 +60,22 @@
       |-xbar.js (竖向柱状图)
       |-ybar.js (横向柱状图)
     |-index.vue (echart组件)
+|-.gitignore
 |-App.vue
 |-main.js
 |-manifest.json
 |-package.json
 |-package-lock.json
 |-pages.json
-|-scss.json
+|-uni.scss
 
 ## 文件命名规则
 
 以小写字母开头驼峰命名
+若页面与tabBar页面想关联，使用下划线_命名(如：index为主页,index_details为主页的详情页)
 
 ## 路由
-新建页面时除了pages.json增加页面路径外，需要在router/modules下定义路由路径;
+新建页面时除了pages.json增加页面路径外，需要在router文件夹下找到相应模块并定义路由路径;
 如果有新增模块，需新建js文件;
 
 示例：
@@ -114,7 +122,7 @@ this.$Router.back(n) 等同于 uni.navigateBack()
 
 ## 服务接口
 
-定义服务接口，可在service/modules/example.js文件中查看示例
+定义服务接口，可在service/example.js文件中查看示例
 
 使用服务接口
 
