@@ -23,7 +23,7 @@
 						<u-input v-model="form.code" placeholder="请输入手机验证码"></u-input>
 					</u-form-item>
 				</u-form>
-				<button class="login-button bt" form-type="submit">登录</button>
+				<button class="login-button bt" form-type="submit" @click="click">登录</button>
 			</form>
 		</view>
 	</view>

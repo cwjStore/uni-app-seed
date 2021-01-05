@@ -33,7 +33,8 @@
 					/* 有标题传标题 */
 					if (params.title) {
 						this.ec.option.title = Object.assign({}, {
-							text: params.title
+							text: params.title,
+							...params.title
 						})
 					}
 					/* 有X轴传X轴 */
@@ -48,15 +49,9 @@
 							data: params.yAxis
 						})
 					}
-					/* 有自定义图例传图例 
-					legend: {
-						formatter: 'custom'
-					},
-					*/
-					if (params.legend) {
-						this.ec.option.legend = Object.assign({}, this.ec.option.legend, params.legend)
-					}
-					
+					// if (params.legend) {
+					// 	this.ec.option.legend = Object.assign({}, this.ec.option.legend, params.legend)
+					// }
 				},
 				deep: true,
 			}

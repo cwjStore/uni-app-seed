@@ -5,6 +5,26 @@ export default {
 			type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
 		}
 	},
+	dataZoom: [{
+			type: 'slider',
+			show: false,
+			xAxisIndex: 0,
+		},
+		{
+			type: 'slider',
+			show: false,
+			yAxisIndex: 0,
+		},
+		{
+			type: 'inside',
+			xAxisIndex: 0,
+			disabled: true,
+		},
+		{
+			type: 'inside',
+			yAxisIndex: 0,
+		}
+	],
 	grid: {
 		left: '3%',
 		right: '4%',
@@ -13,12 +33,7 @@ export default {
 	},
 	xAxis: {
 		type: 'value',
-		axisLine: {
-			show: true
-		},
-		splitLine: {
-			show: false
-		}
+		show: false
 	},
 	yAxis: {
 		type: 'category',
