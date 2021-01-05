@@ -11,18 +11,14 @@ const router = new Router({
 
 //全局路由前置守卫
 router.beforeEach(async (to, from, next) => {
-	// if(to.name == 'login'){
-	// 	next()
-	// 	return;
-	// }
-	// await getToken().then(res=>{
-	// 	if(res){
-	// 		next()
-	// 	}else{
-	// 		router.push({name:'login'})
-	// 	}
-	// })
-	next()
+	getToken().then(res=>{
+		if(res && to.name == 'login'){
+			router.pushTab({name:'index'})
+			next()
+		}else{
+			next()
+		}
+	})
 })
 // 全局路由后置守卫
 router.afterEach((to, from) => {
