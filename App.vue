@@ -26,4 +26,20 @@
 		font-stretch: normal;
 		letter-spacing: 0px;
 	}
+	.long_button{
+		margin-top: 80rpx;
+		background-color: $button-primary-color;
+		color: #fff;
+		height: 72rpx;
+		width: 600rpx;
+		line-height: 72rpx;
+		font-family: PingFang-SC-Medium;
+		font-size: 32rpx;
+		font-weight: bold;
+		font-stretch: normal;
+		letter-spacing: 0px;
+	}
+	.placeholderClass{
+		color: #c0c4cc;
+	}
 </style>
