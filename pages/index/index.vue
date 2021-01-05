@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		首页
-		<button @click="click">详情页面</button>
+		<button @click="click" class="button">详情页面</button>
 		<!-- #ifdef MP -->
 		<!-- 封装的echart只适合小程序，H5与APP需另行开发 -->
 		<uni-echart class="uni-ec-canvas" canvasId="line-1" type="line" :source="line_source"></uni-echart>
@@ -148,5 +148,8 @@
 		width: 750upx;
 		height: 750upx;
 		display: block;
+	}
+	.button{
+		background-color: $button-primary-color;
 	}
 </style>
